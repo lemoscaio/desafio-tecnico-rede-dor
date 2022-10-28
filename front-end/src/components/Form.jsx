@@ -26,7 +26,8 @@ export function Form({ setAddress, setIsLoadingAddress }) {
     setFeedbackMessage("")
 
     try {
-      const response = await api.get(`/addresses/cep/${cep}`)
+      const formmatedCep = cep.replace("-", "")
+      const response = await api.get(`/addresses/cep/${formmatedCep}`)
       const { data } = response
       console.log(response)
 
