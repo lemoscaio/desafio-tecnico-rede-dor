@@ -1,8 +1,11 @@
 # Processo Seletivo Rede D'or - Desafio técnico
 
-<img src="https://i.imgur.com/PW0yftO.gif" width="50%" align="center">
+### Demo (GIF):
+<div align=center>
+<img src="https://i.imgur.com/PW0yftO.gif" width="50%" align=center>
+</div>
 
-### Requisitos:
+## Requisitos:
 * Front-end
   * Criação de um app em React com um campo de texto "CEP" e um botão ENVIAR.
   * O botão "Enviar" deve submeter os dados para consulta ao back-end.
@@ -18,3 +21,86 @@ forma clara para a leitura do usuário.
   * Se preocupe em dar as mensagens corretas de acordo com cada código HTTP (200, 400,
 404, 500)
   * Seja criativo e fique a vontade para incluir outros componentes que achar interessante.
+
+## Endpoints do Back-end:
+
+### Endereços
+
+```http
+GET /addresses/cep/${cep}
+```
+
+#### Request:
+
+| Params | Type      | Description              |
+| :----- | :-------- | :----------------------- |
+| `cep`  | `integer` | **Required**. CEP válido |
+
+
+#### Response:
+
+```json
+{
+  "status":200,
+  "ok":true,
+  "code":"68908-111",
+  "state":"AP",
+  "city":"Macapá",
+  "district":"Jesus de Nazaré",
+  "address":"Canal da Manoel Eudóxio Pereira",
+  "statusText":"ok"
+}
+```
+## Environment Variables
+
+Para rodar o projeto, você precisa adicionar as seguintes variáveis de ambiente em seu arquivo .env
+
+### Front-end:
+`VITE_APP_API_URL = http://localhost:4000` - URL do Servidor.
+
+### Back-end
+`PORT = number` - Definir em qual porta irá rodar o servidor. Padrão: 4000.
+
+## Rodar localmente
+
+Clone the project
+
+```bash
+  git clone https://github.com/lemoscaio/desafio-tecnico-rede-dor.git
+```
+
+Go to the project directory
+
+```bash
+  cd desafio-tecnico-rede-dor/back-end
+  ou
+  cd desafio-tecnico-rede-dor/front-end
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+  ou 
+  npm run dev
+```
+
+## Feito com
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+
+
+## Autores
+
+-   [@lemoscaio](https://www.github.com/lemoscaio) 🪐
+
